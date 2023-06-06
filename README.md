@@ -1,1 +1,1 @@
-# Trabalho-JS-Estoque-Biblioteca
+# Trabalho-Controle-de-Estoque-Biblioteca
