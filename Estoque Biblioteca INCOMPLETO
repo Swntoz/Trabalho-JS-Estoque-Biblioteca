@@ -1,0 +1,94 @@
+/* Programa para simular um estoque de uma biblioteca*/
+
+//Entradas:
+
+let livros = []
+let preco = []
+let qtdLivros = []
+
+let opcao
+let codigosLivros = -1
+//Loop para que o usuário se mantenha no menu enquanto ele não digitar a opçao de sair:
+
+do {
+
+  opcao = Number(prompt(`Escolha uma das seguintes opções do menu:
+  (1)Registrar Livro 
+  (2)Atualizar Estoque
+  (3)Pesquisar um Livro
+  (4)Realizar uma venda
+  (5)Sair`))
+
+  //Switch-case para cada opção do menu:
+  switch (opcao) {
+    //Operação para fazer o cadastro de um Livro novo:
+    case 1:
+      nomeNovoLivro = prompt(`Digite o nome do Livro:`)
+      livros.push(nomeNovoLivro)
+
+      precoLivro = prompt(`Digite o preço do Livro:`)
+      preco.push(Number(precoLivro))
+
+      qtdLivroNovo = prompt(`Digite a Quantidade do novo Livro:`)
+      qtdLivros.push(Number(qtdLivroNovo))
+
+      alert(`
+    Livros: 
+    ${livros}
+    Preços: 
+    ${preco}
+    Quantidade de Livros: 
+    ${qtdLivros}`)
+
+      break
+
+    //Operação para atualização de estoque:
+    case 2:
+
+      while (codigosLivros < 0 || codigosLivros >= livros.length) {
+        codigosLivros = prompt(`Digite o código do produto que deseja atualizar:`)
+      }
+      livroAlterado = prompt(`Digite o novo nome do produto se deseja altera-lo, caso contrário clique enter:`)
+
+      if (livroAlterado !== "") {
+        livros[codigosLivros] = livroAlterado
+      }
+
+      precoAlterado = prompt(`Digite o novo preço do produto se deseja altera-lo, caso contrário clique enter:`)
+
+      if (precoAlterado !== "") {
+        preco[codigosLivros] = precoAlterado
+      }
+
+      qtdAlterada = prompt(`Digite a nova quantidade do produtose deseja altera-lo, caso contrário clique enter:`)
+
+      if (qtdAlterada !== "") {
+        qtdLivros[codigosLivros] = qtdAlterada
+      }
+
+      alert(`
+    Livros: 
+    ${livros}
+    Preços: 
+    ${preco}
+    Quantidade de Livros: 
+    ${qtdLivros}`)
+
+      break
+
+    //Para pesquisar o código de um Livro:
+    case 3:
+
+      posicao = prompt(`Digite o nome do livro que deseja pesquisar:`)
+
+      posicaoDoLivro = livros.indexOf(posicao)
+
+      alert(`${posicaoDoLivro}`)
+
+      break
+
+    //Para realizar a venda de um Livro:
+    case 4:
+    //Duvidas de como fazer uma operação para realizar a venda de um livro.
+  }
+} while (opcao != 5)
