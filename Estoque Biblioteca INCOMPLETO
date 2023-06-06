@@ -19,10 +19,10 @@ do {
   (4)Realizar uma venda
   (5)Sair`))
 
-  //Switch-case para cada opção do menu:
+  //switch-case para cada opção do menu:
   switch (opcao) {
-    //Operação para fazer o cadastro de um Livro novo:
     case 1:
+    //Operação para fazer o cadastro de um Livro novo:
       nomeNovoLivro = prompt(`Digite o nome do Livro:`)
       livros.push(nomeNovoLivro)
 
@@ -42,8 +42,8 @@ do {
 
       break
 
-    //Operação para atualização de estoque:
     case 2:
+    //Operação para atualização de estoque:
 
       while (codigosLivros < 0 || codigosLivros >= livros.length) {
         codigosLivros = prompt(`Digite o código do produto que deseja atualizar:`)
@@ -76,8 +76,8 @@ do {
 
       break
 
-    //Operação para pesquisar o código de um Livro:
     case 3:
+    //Operação para pesquisar o código de um Livro:
 
       pesquisarLivro = prompt(`Digite o nome do livro que deseja pesquisar:`)
 
@@ -94,14 +94,16 @@ do {
 
       break
 
-    //Para realizar a venda de um Livro:
     case 4:
+    //Para realizar a venda de um Livro:
 
     nomeDoLivroASerComprado = prompt(`Digite o Nome do livro para compra:`)
     nomeDoLivro = nomeDoLivroASerComprado
     precoDoLivro = preco[livros.indexOf(nomeDoLivroASerComprado)]
 
     qtdDoLivroASerComprado = Number(prompt(`Digite a quantidade a ser comprada do Livro:`))
+
+    //if-else para que caso a quantidade de livros seja maior que 1, o preço do livro seja multiplicado pela quantidade comprada. 
 
     if(qtdDoLivroASerComprado > 1){
       precoDoLivro *= qtdDoLivroASerComprado
@@ -111,6 +113,8 @@ do {
     Nome do Livro: ${nomeDoLivro}
     Total Pagar: R$${precoDoLivro}
     Quantidade: ${qtdDoLivroASerComprado}`)
+
+    //Duvidas de como fazer com que a cada compra a quantidade especifica de cada livro seja subtraida pela qtdDoLivroASerComprado.
 
     break
   }
