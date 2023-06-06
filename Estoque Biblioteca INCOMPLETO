@@ -111,5 +111,7 @@ do {
     Nome do Livro: ${nomeDoLivro}
     Total Pagar: R$${precoDoLivro}
     Quantidade: ${qtdDoLivroASerComprado}`)
+
+    break
   }
 } while (opcao != 5)
