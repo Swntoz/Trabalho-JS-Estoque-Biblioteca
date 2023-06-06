@@ -76,19 +76,40 @@ do {
 
       break
 
-    //Para pesquisar o código de um Livro:
+    //Operação para pesquisar o código de um Livro:
     case 3:
 
-      posicao = prompt(`Digite o nome do livro que deseja pesquisar:`)
+      pesquisarLivro = prompt(`Digite o nome do livro que deseja pesquisar:`)
 
-      posicaoDoLivro = livros.indexOf(posicao)
+      posicaoDoLivro = livros.indexOf(pesquisarLivro)
+      nomeDoLivro = pesquisarLivro
+      precoDoLivro = preco[livros.indexOf(pesquisarLivro)]
+      qtdDoLivro = qtdLivros[livros.indexOf(pesquisarLivro)]
 
-      alert(`${posicaoDoLivro}`)
+      alert(`
+      Nome do Livro pesquisado: ${pesquisarLivro} 
+      Código: ${posicaoDoLivro}
+      Preço: ${precoDoLivro}
+      Quantidade: ${qtdDoLivro}`)
 
       break
 
     //Para realizar a venda de um Livro:
     case 4:
-    //Duvidas de como fazer uma operação para realizar a venda de um livro.
+
+    nomeDoLivroASerComprado = prompt(`Digite o Nome do livro para compra:`)
+    nomeDoLivro = nomeDoLivroASerComprado
+    precoDoLivro = preco[livros.indexOf(nomeDoLivroASerComprado)]
+
+    qtdDoLivroASerComprado = Number(prompt(`Digite a quantidade a ser comprada do Livro:`))
+
+    if(qtdDoLivroASerComprado > 1){
+      precoDoLivro *= qtdDoLivroASerComprado
+    }
+
+    alert(`
+    Nome do Livro: ${nomeDoLivro}
+    Total Pagar: R$${precoDoLivro}
+    Quantidade: ${qtdDoLivroASerComprado}`)
   }
 } while (opcao != 5)
