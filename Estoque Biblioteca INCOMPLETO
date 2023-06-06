@@ -36,7 +36,7 @@ do {
     Livros: 
     ${livros}
     Preços: 
-    ${preco}
+    R$${preco}
     Quantidade de Livros: 
     ${qtdLivros}`)
 
@@ -70,7 +70,7 @@ do {
     Livros: 
     ${livros}
     Preços: 
-    ${preco}
+    R$${preco}
     Quantidade de Livros: 
     ${qtdLivros}`)
 
@@ -89,7 +89,7 @@ do {
       alert(`
       Nome do Livro pesquisado: ${pesquisarLivro} 
       Código: ${posicaoDoLivro}
-      Preço: ${precoDoLivro}
+      Preço: R$${precoDoLivro}
       Quantidade: ${qtdDoLivro}`)
 
       break
