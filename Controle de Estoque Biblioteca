@@ -22,7 +22,7 @@ do {
   //switch-case para cada opção do menu:
   switch (opcao) {
     case 1:
-    //Operação para fazer o cadastro de um Livro novo:
+      //Operação para fazer o cadastro de um Livro novo:
       nomeNovoLivro = prompt(`Digite o nome do Livro:`)
       livros.push(nomeNovoLivro)
 
@@ -43,7 +43,7 @@ do {
       break
 
     case 2:
-    //Operação para atualização de estoque:
+      //Operação para atualização de estoque:
 
       while (codigosLivros < 0 || codigosLivros >= livros.length) {
         codigosLivros = prompt(`Digite o código do produto que deseja atualizar:`)
@@ -77,7 +77,7 @@ do {
       break
 
     case 3:
-    //Operação para pesquisar o código de um Livro:
+      //Operação para pesquisar o código de um Livro:
 
       pesquisarLivro = prompt(`Digite o nome do livro que deseja pesquisar:`)
 
@@ -95,27 +95,30 @@ do {
       break
 
     case 4:
-    //Para realizar a venda de um Livro:
+      //Para realizar a venda de um Livro:
 
-    nomeDoLivroASerComprado = prompt(`Digite o Nome do livro para compra:`)
-    nomeDoLivro = nomeDoLivroASerComprado
-    precoDoLivro = preco[livros.indexOf(nomeDoLivroASerComprado)]
+      nomeDoLivroASerVendido = prompt(`Digite o Nome do livro para venda:`)
+      nomeDoLivro = nomeDoLivroASerVendido
+      indiceLivroVendido = livros.indexOf(nomeDoLivroASerVendido)
+      precoDoLivro = preco[indiceLivroVendido]
 
-    qtdDoLivroASerComprado = Number(prompt(`Digite a quantidade a ser comprada do Livro:`))
+      qtdDoLivroASerVendido = Number(prompt(`Digite a quantidade a ser comprada do Livro:`))
 
-    //if-else para que caso a quantidade de livros seja maior que 1, o preço do livro seja multiplicado pela quantidade comprada. 
+      //atualização da quantidade do livro:
 
-    if(qtdDoLivroASerComprado > 1){
-      precoDoLivro *= qtdDoLivroASerComprado
-    }
+      qtdLivros[indiceLivroVendido] -= qtdDoLivroASerVendido
 
-    alert(`
+      //if-else para que caso a quantidade de livros seja maior que 1, o preço do livro seja multiplicado pela quantidade comprada. 
+
+      if (qtdDoLivroASerVendido > 1) {
+        precoDoLivro *= qtdDoLivroASerVendido
+      }
+
+      alert(`
     Nome do Livro: ${nomeDoLivro}
     Total Pagar: R$${precoDoLivro}
-    Quantidade: ${qtdDoLivroASerComprado}`)
+    Quantidade: ${qtdDoLivroASerVendido}`)
 
-    //Duvidas de como fazer com que a cada compra a quantidade especifica de cada livro seja subtraida pela qtdDoLivroASerComprado.
-
-    break
+      break
   }
 } while (opcao != 5)
